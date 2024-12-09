@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <title>테스트</title>
+   <meta http-equiv="Content-Type" contents="text/html;charset=UTF-8">
+</head>
+
+<body>
+   타임리프 학습하기
+   <div>
+      <h3 th:text="${value}">안녕하세요</h3>
+      <h3 th:if="${value == '안녕하냐고요?'}" th:text="'아니요'"></h3>      <!-- 만약에 value 값이 안녕하냐고요? 라는 값이 넘어오면 아니요 출력-->
+      <div th:each="tv : ${alist}">
+          <h3 th:text="${tv.name}">이름 나타나는 자리</h3>
+          <h3 th:text="${tv.memberid}">아이디 나타나는 자리</h3>
+      </div>
+   </div>
+</body>
+</html>
