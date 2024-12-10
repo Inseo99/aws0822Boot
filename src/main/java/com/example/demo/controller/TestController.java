@@ -21,10 +21,12 @@ public class TestController {
       tv1.setName("홍길동");
       tv1.setMemberid("hong");
       alist.add(tv1);
+      
       TestVo tv2 = new TestVo();
       tv2.setName("이순신");
       tv2.setMemberid("lee");
       alist.add(tv2);
+      
       TestVo tv3 = new TestVo();
       tv3.setName("강감찬");
       tv3.setMemberid("kang");
@@ -32,6 +34,7 @@ public class TestController {
    
       model.addAttribute("alist",alist);
       model.addAttribute("value","안녕하냐고요?");
-   return "test";
+      
+      return "test";
    }
 }

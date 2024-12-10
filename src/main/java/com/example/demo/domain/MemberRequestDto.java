@@ -18,13 +18,15 @@ public class MemberRequestDto {      // 받는용도
    private String memberaddr;
    private String membergender;
    private String memberhobby;
-
+   private String introduce;
+   
    @Builder	// builder를 통한 생성
    public MemberRequestDto(String memberid, String memberpwd,
 		   				   String membername,String memberemail,
 		   				   String memberbirth,String memberphone,
 		   				   String memberaddr,String membergender,
 		   				   String memberhobby) {
+	   
 	   this.memberid = memberid;
 	   this.memberpwd = memberpwd;
 	   this.membername = membername;
@@ -34,5 +36,23 @@ public class MemberRequestDto {      // 받는용도
 	   this.memberaddr = memberaddr;
 	   this.membergender = membergender;
 	   this.memberhobby = memberhobby;
+   }
+   
+   // 넘겨받은 파라미터값을 MemberJpaDto로 생성시켜 옮겨담겠다
+   public MemberJpaDto toEntity() {
+	   
+	   return MemberJpaDto.builder()
+	   .memberid(memberid)
+	   .memberpwd(memberpwd)
+	   .membername(membername)
+	   .memberemail(memberemail)
+	   .memberbirth(memberbirth)
+	   .memberphone(memberphone)
+	   .memberaddr(memberaddr)
+	   .membergender(membergender)
+	   .memberhobby(memberhobby)
+	   .introduce(introduce)
+	   .build();
+	   
    }
 }

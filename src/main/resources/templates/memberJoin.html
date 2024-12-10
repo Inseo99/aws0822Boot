@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <HTML xmlns:th="http://www.thymeleaf.org">
 <HEAD>
@@ -75,7 +74,7 @@ function check(){
 		
 		
 		// 가상경로를 사용해서 쓸 예정  가짜경로 형식은 /기능/세부기능.aws
-		fm.action= "<%=request.getContextPath()%>/member/memberJoinAction.aws";
+		fm.action= "/member/memberJoinAction.aws";
 		fm.method="post"; 
 		fm.submit();
 	}
@@ -108,7 +107,7 @@ function hobbyCheck(){
 	return flag;
 }
 
-<!--$(document).ready(function() {
+$(document).ready(function() {
 	
 	$("#btn").click(function() {
 		// alert("중복체크버튼 클릭")
@@ -121,7 +120,7 @@ function hobbyCheck(){
 		
 		$.ajax({
 			type : "post",	// 전송방식
-			url : "<%=request.getContextPath()%>/member/memberIdCheck.aws",
+			url : "/member/memberIdCheck.aws",
 			dataType : "json",		// json 타입은 문서에서 {"키값" : "vlaue값" , "키값" : "value값2"}
 			data : {"memberid" : memberid},
 			success : function(result) {	// 결과가 넘어와서 성공했을 때 받는 영역
@@ -142,7 +141,7 @@ function hobbyCheck(){
 		});
 		
 	});
-});-->
+});
 
 
 
@@ -171,7 +170,7 @@ function hobbyCheck(){
 				<th class="idcolor">비밀번호</th>
 				<td>
 				<input type="password" name="memberpwd" maxlength="30" style="width:100px;">
-			 `		</td>
+				</td>
 			</tr>
 			<tr>
 				<th>비밀번호확인</th>
