@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,14 +20,17 @@ public class MemberRequestDto {      // 받는용도
    private String memberaddr;
    private String membergender;
    private String memberhobby;
-   private String introduce;
+   private String introduce = "";
+   private String delyn;
+   private LocalDateTime writeday;
    
    @Builder	// builder를 통한 생성
    public MemberRequestDto(String memberid, String memberpwd,
 		   				   String membername,String memberemail,
 		   				   String memberbirth,String memberphone,
 		   				   String memberaddr,String membergender,
-		   				   String memberhobby) {
+		   				   String memberhobby, String introduce,
+		   				   String delyn, LocalDateTime writeday) {
 	   
 	   this.memberid = memberid;
 	   this.memberpwd = memberpwd;
@@ -36,6 +41,9 @@ public class MemberRequestDto {      // 받는용도
 	   this.memberaddr = memberaddr;
 	   this.membergender = membergender;
 	   this.memberhobby = memberhobby;
+	   this.introduce = introduce;
+	   this.delyn = delyn;
+	   this.writeday = writeday;
    }
    
    // 넘겨받은 파라미터값을 MemberJpaDto로 생성시켜 옮겨담겠다
@@ -52,6 +60,8 @@ public class MemberRequestDto {      // 받는용도
 	   .membergender(membergender)
 	   .memberhobby(memberhobby)
 	   .introduce(introduce)
+	   .delyn(delyn)
+	   .writeday(writeday)
 	   .build();
 	   
    }

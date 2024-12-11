@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<HTML xmlns:th="http://www.thymeleaf.org">
+<HEAD>
+<TITLE> 회원목록 </TITLE>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script> <!-- jquery CDN주소 -->
+<link href="/css/style.css" type="text/css" rel="stylesheet">
+</HEAD>
+ <BODY>
+<header>
+<h3>회원목록 페이지</h3>
+<hr>
+</header>
+<nav>
+</nav>
+<section>
+	<article>	
+		<table style="width:800px; border: 1px solid darkblue;">
+			<tr>
+				<th class="idcolor">회원번호</th>
+				<th>회원 아이디</th>
+				<th>회원 이름</th>
+				<th>회원 이메일</th>
+				<th>회원 연락처</th>
+				<th>회원 주소</th>
+				<th>회원 성별</th>
+				<th>등록일</th>
+				<th>회원탈퇴여부</th>
+			</tr>
+			<tr th:each = "mdto : ${alist}">
+				<td th:text = "${mdto.midx}">회원번호</td>
+				<td th:text = "${mdto.memberid}">회원 아이디</td>
+				<td th:text = "${mdto.membername}">회원 이름</td>
+				<td th:text = "${mdto.memberemail}">회원 이메일</td>
+				<td th:text = "${mdto.memberphone}">회원 연락처</td>
+				<td th:text = "${mdto.memberaddr}">회원 주소</td>
+				<td th:text = "${mdto.membergender}">회원 성별</td>
+				<td th:text = "${mdto.writeday}">등록일</td>
+				<td th:text = "${mdto.delyn}">회원탈퇴여부</td>
+			</tr>
+		</table>
+</article>	
+
+</section>
+<aside>
+</aside>
+<footer>
+made by kis.
+</footer>
+</BODY>
+</HTML>
